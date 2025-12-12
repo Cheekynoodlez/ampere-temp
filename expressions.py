@@ -6,7 +6,7 @@ from rgbmatrix import RGBMatrix, RGBMatrixOptions
 from PIL import Image
 
 # Add image file location in rpi
-image_file = "/home/cheekynoodlez/media/untitled.gif"
+image_file = "./expression.gif"
 
 gif = Image.open(image_file)
 
@@ -24,6 +24,7 @@ options.gpio_slowdown = 4
 options.chain_length = 2
 options.parallel = 1
 options.hardware_mapping = 'adafruit-hat'  # If you have an Adafruit HAT: 'adafruit-hat'
+options.daemon = 1; # Run as background process
 
 matrix = RGBMatrix(options = options)
 
@@ -54,5 +55,7 @@ try:
             cur_frame = 0
         else:
             cur_frame += 1
-except KeyboardInterrupt:
-    sys.exit(0)
+
+# Obsolete when ran as a background process
+# except KeyboardInterrupt:
+#     sys.exit(0)
