@@ -38,8 +38,8 @@ print("Preprocessing gif, this may take a moment depending on the size of the gi
     # must copy the frame out of the gif, since thumbnail() modifies the image in-place
     #frame = gif.copy()
 
-    gif = Image.open(image_file).convert("RGBA")
-    background = Image.new("RGBA", gif.size)
+gif = Image.open(image_file).convert("RGBA")
+background = Image.new("RGBA", gif.size)
 
 for frame_index in range(num_frames):
     gif.seek(frame_index)
