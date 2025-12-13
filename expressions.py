@@ -38,7 +38,7 @@ for frame_index in range(0, num_frames):
 
     combined = Image.new(frame.mode, (matrix.width * 2, matrix.height))
     combined.paste(frame, (0,0))
-    combined.paste(frame.transpose(Image.FLIP_LEFT_RIGHT, (matrix.width, 0)))
+    combined.paste(frame.transpose(Image.FLIP_LEFT_RIGHT), (matrix.width, 0))
     
     combined.thumbnail((matrix.width, matrix.height), Image.Resampling.LANCZOS)
     canvas = matrix.CreateFrameCanvas()
