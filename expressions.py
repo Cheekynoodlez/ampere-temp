@@ -59,8 +59,10 @@ try:
         canvas = matrix.CreateFrameCanvas()
         canvas.SetImage(frames[cur_frame])
         canvas = matrix.SwapOnVSync(canvas, framerate_fraction=10)
-
-        cur_frame = (cur_frame + 1) % len(frames)
+        if cur_frame == num_frames - 1:
+            cur_frame = 0
+        else:
+            cur_frame += 1
 
 except KeyboardInterrupt:
     sys.exit(0)
