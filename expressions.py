@@ -11,7 +11,7 @@ image_file = "./expression.gif"
 gif = Image.open(image_file)
 
 try:
-    num_frames = gif.n_frames - 1
+    num_frames = gif.n_frames
 except Exception:
     sys.exit("provided image is not a gif")
 
