@@ -6,7 +6,7 @@ from rgbmatrix import RGBMatrix, RGBMatrixOptions
 from PIL import Image
 
 # Add image file location in rpi
-image_file = "./expression.gif"
+image_file = "/home/cheekynoodlez/ampere-temp/expression.gif"
 
 gif = Image.open(image_file)
 
