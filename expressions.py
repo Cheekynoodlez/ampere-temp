@@ -31,7 +31,7 @@ matrix = RGBMatrix(options = options)
 # Preprocess the gifs frames into canvases to improve playback performance
 canvases = []
 print("Preprocessing gif, this may take a moment depending on the size of the gif...")
-for frame_index in range(0, num_frames - 1):
+for frame_index in range(0, num_frames):
     gif.seek(frame_index)
     # must copy the frame out of the gif, since thumbnail() modifies the image in-place
     frame = gif.copy()
