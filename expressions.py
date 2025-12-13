@@ -55,10 +55,7 @@ try:
     # Infinitely loop through the gif
     cur_frame = 0
     while(True):
-        
-        canvas = matrix.CreateFrameCanvas()
-        canvas.SetImage(frames[cur_frame])
-        canvas = matrix.SwapOnVSync(canvas, framerate_fraction=10)
+        canvas = matrix.SwapOnVSync(canvases[cur_frame], framerate_fraction=10)
         if cur_frame == num_frames - 1:
             cur_frame = 0
         else:
