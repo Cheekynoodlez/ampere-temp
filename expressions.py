@@ -36,7 +36,7 @@ for frame_index in range(0, num_frames):
     # must copy the frame out of the gif, since thumbnail() modifies the image in-place
     frame = gif.copy()
 
-    combined = Image.new(RGB, (matrix.width * 2, matrix.height))
+    combined = Image.new(frame.mode, (matrix.width * 2, matrix.height))
     combined.paste(frame, (0,0))
     combined.paste(frame.transpose(Image.FLIP_LEFT_RIGHT, (matrix.width, 0)))
     
