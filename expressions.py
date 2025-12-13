@@ -35,7 +35,7 @@ for frame_index in range(0, num_frames):
     gif.seek(frame_index)
     # must copy the frame out of the gif, since thumbnail() modifies the image in-place
     frame = gif.copy()
-    frame.thumbnail((matrix.width, matrix.height), Image.ANTIALIAS)
+    frame.thumbnail((matrix.width, matrix.height), Image.Resampling.LANCZOS))
     canvas = matrix.CreateFrameCanvas()
     canvas.SetImage(frame.convert("RGB"))
     canvases.append(canvas)
