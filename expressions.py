@@ -54,6 +54,7 @@ try:
 
     # Infinitely loop through the gif
     cur_frame = 0
+    canvas = canvases[0]
     while(True):
         canvas = matrix.SwapOnVSync(canvases[cur_frame], framerate_fraction=10)
         cur_frame = (cur_frame + 1) % num_frames
