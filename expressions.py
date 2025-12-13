@@ -53,11 +53,13 @@ try:
     print("Press CTRL-C to stop.")
 
     # Infinitely loop through the gif
-    cur_frame = 0
-    canvas = canvases[0]
-    while(True):
-        canvas = matrix.SwapOnVSync(canvases[cur_frame], framerate_fraction=10)
-        cur_frame = (cur_frame + 1) % num_frames
+cur_frame = 0
+canvas = matrix.CreateFrameCanvas()
+
+while True:
+    canvas.SetImage(canvases[cur_frame].image)
+    canvas = matrix.SwapOnVSync(canvas, framerate_fraction=10)
+    cur_frame = (cur_frame + 1) % num_frames
 
 except KeyboardInterrupt:
     sys.exit(0)
