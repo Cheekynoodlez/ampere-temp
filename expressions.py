@@ -32,22 +32,11 @@ matrix = RGBMatrix(options = options)
 canvases = []
 print("Preprocessing gif, this may take a moment depending on the size of the gif...")
 
-#for frame_index in range(0, num_frames):
+for frame_index in range(0, num_frames):
     
-    #gif.seek(frame_index)
-    # must copy the frame out of the gif, since thumbnail() modifies the image in-place
-    #frame = gif.copy()
-
-gif = Image.open(image_file).convert("RGBA")
-background = Image.new("RGBA", gif.size)
-
-for frame_index in range(num_frames):
     gif.seek(frame_index)
-    background.paste(gif, (0, 0), gif)
-
-    frame = background.copy()
-
-    
+    # must copy the frame out of the gif, since thumbnail() modifies the image in-place
+    frame = gif.copy()
 
     combined = Image.new(frame.mode, (128, 32))
     combined.paste(frame, (0,0))
