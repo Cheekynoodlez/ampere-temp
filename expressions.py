@@ -24,7 +24,7 @@ options.gpio_slowdown = 4
 options.chain_length = 2
 options.parallel = 1
 options.hardware_mapping = 'adafruit-hat'  # If you have an Adafruit HAT: 'adafruit-hat'
-options.daemon = 1; # Run as background process
+# options.daemon = 1; # Run as background process
 
 matrix = RGBMatrix(options = options)
 
@@ -56,6 +56,5 @@ try:
         else:
             cur_frame += 1
 
-# Obsolete when ran as a background process
-# except KeyboardInterrupt:
-#     sys.exit(0)
+except KeyboardInterrupt:
+    sys.exit(0)
